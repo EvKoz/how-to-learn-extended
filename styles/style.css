@@ -1,3 +1,7 @@
+/*a, div, section, p, ol, ul, li, h1, h2, h3, h4{
+  border: 1px solid red;
+}*/
+
 a{
   text-decoration: none;
   color: #2f80ed;
@@ -216,7 +220,7 @@ margin: 0;
 .feynman__title{
   width: 648px;
   text-align: center;
-  margin: 0 auto 70px;
+  margin: 100px auto 70px;
   line-height: 96px;
   font-size: 102px;
   font-weight: 600;
