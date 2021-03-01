@@ -1,3 +1,7 @@
+div, section, a, p, li, ol, ul, h1, h2, h3, h4{
+  border: 1px solid red;
+}
+
 a{
   text-decoration: none;
   color: #2f80ed;
@@ -36,6 +40,7 @@ a{
   z-index: 1;
   margin-top: 30px;
   margin-left: 64px;
+  position: absolute;
 }
 
 .header__title{
@@ -44,11 +49,12 @@ a{
 поверх других блоков Высота строки 96px, размер шрифта 102px, начертание шрифта
 полужирное*/
   width: 730px;
-  margin: auto auto auto 64px;
+  margin: auto 0 auto 64px;
   line-height: 96px;
   font-size: 102px;
   font-weight: 600;
   z-index: 1;
+
 }
 
 .header__subtitle{
