@@ -2,19 +2,15 @@
   border: 1px solid red;
 }*/
 
-a{
+.logo, .footer__column-links, .header__link, .feynman__link {
   text-decoration: none;
   color: #2f80ed;
 }
 
 .page {
   min-width: 1100px;
-  /* мы ещё не умеем делать мобильную версию сайта, */
-  /* поэтому выше установлена минимальная ширина страницы */
   max-width: 1600px;
-  /* выше установили ограничение по максимальной ширине */
   margin: 0 auto;
-  /* выше для экранов больше 1600px отцентрировали весь контент */
   font-family: 'Helvetica Neue', Arial, sans-serif;
   color:  #000000;
 }
@@ -27,55 +23,44 @@ a{
   background-color: #f2f2f2;
   position: relative;
   margin-bottom: 100px;
-        /* выше установили ограничения для секции */
 }
 
-.logo__place_header{
-  /*Позиционируйте элемент абсолютно. Следите, чтобы на малых
-разрешениях логотип был поверх других блоков. Свойства
-позиционирования указывайте для модификаторов.*/
+.logo_place_header{
   background-image: url(../images/logo_place_header.svg);
   width: 183px;
   height: 32px;
-  z-index: 1;
-  margin-top: 30px;
-  margin-left: 64px;
+  top: 30px;
+  left: 64px;
   position: absolute;
+  z-index: 2;
+  /*у меня не получилось настроить z-индекс так же, как в секции kaufman,
+  поэтому в header он применен поэлементно*/
 }
 
 .header__title{
-  /*Используйте flex для вертикального центрирования элемента, а отступ
-для смещения вправо. Следите, чтобы на малых разрешениях текст был
-поверх других блоков Высота строки 96px, размер шрифта 102px, начертание шрифта
-полужирное*/
   width: 730px;
-  margin: auto 0 auto 64px;
+  align-self: center;
+  margin-left: 64px;
   line-height: 96px;
   font-size: 102px;
-  font-weight: 600;
-  z-index: 1;
-
+  font-weight: 700;
+  padding: 0;
+  z-index: 2;
 }
 
 .header__subtitle{
-  /*Позиционируйте элемент абсолютно, следите, чтобы на малых
-разрешениях текст был поверх других блоков Высота строки 25px,
-размер шрифта 18px, начертание шрифта нормальное*/
   width: 388px;
   bottom: 30px;
   left: 64px;
   position: absolute;
   font-size: 18px;
-  font-weight: 100;
-  z-index: 1;
+  font-weight: 400;
   line-height: 25px;
   margin: 0;
+  z-index: 2;
 }
 
 .header__main-illustration{
-  /*Позиционируйте элемент абсолютно. Прижмите его к правому
-нижнему краю блока header. При использовании картинок, не
-забывайте обязательный атрибут alt*/
   width: 765px;
   height: 608px;
   position: absolute;
@@ -84,16 +69,14 @@ a{
   z-index: 1;
 }
 
-/* ниже мы привели пример двух селекторов, чтобы вы вспомнили запись элемента */
 .header__square-pic {
-  /*Позиционируйте элемент абсолютно. Он должен быть прижат к
-правому краю и отступать сверху от границы блока header*/
   height: 568px;
   width: 568px;
   position: absolute;
   background-color: #2f80ed;
   top: 64px;
   right: 0;
+  z-index: 0;
 }
 
 .description{
@@ -104,41 +87,38 @@ a{
 
 .two-columns{
   display: flex;
-  width: 80%;
   justify-content: space-between;
+  width: 80%;
 }
 
 .two-columns__brief{
+  width: 175px;
+  margin: 0;
   font-size: 18px;
   font-weight: normal;
   color: #2f80ed;
   line-height: 1.2;
-  width: 175px;
-  margin: 0;
-}
-
-.right_column{
-  width: 80%;
 }
 
 .two-columns__main-text{
-  font-size: 24px;
-  font-weight: 100;
-  line-height: 34px;
+  width: 80%;
   min-width: 784px;
-  margin: 0 auto;
-}
+
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 34px;
+ }
 
 .two-columns__paragraph{
-  margin-bottom: 30px;
-}
+  margin: 0 0 30px;
+  }
 
-.two-columns__paragraph:last-of-type{
+.two-columns_paragraph:last-of-type{
   margin: 0;
-}
+  }
 
 .two-columns__span-accent{
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .digits{
@@ -155,7 +135,7 @@ a{
   font-size: 60px;
   width: 60%;
   line-height: 1.15;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .section-subtitle{
@@ -165,7 +145,7 @@ a{
   width: 60%;
   margin: 0;
   line-height: 34px;
-  font-weight: 100;
+  font-weight: 400;
 }
 
 .table{
@@ -188,60 +168,53 @@ a{
 .table__heading{
   line-height: 1.15;
   font-size: 24px;
-  font-weight: 600;
-  margin: 0 0 20px;
+  font-weight: 700;
+  margin: 0;
 }
 
 .table__text{
   line-height: 1.2;
   font-size: 18px;
-  font-weight: 100;
-  margin-top: 0;
-}
-
-.table__text_footnote{
-margin: 0;
+  font-weight: 400;
+  margin: 20px 0 0;
 }
 
 .feynman {
-  height: 790px;
+  min-height: 790px;
+  /*параметр min-height указан согласно замечанию Ирины Овчинниковой, в брифе указан height*/
   display: flex;
+  flex-direction: column;
   background-color: #f2f2f2;
   position: relative;
   margin: 0;
-}
-
-.feynman__heading{
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
+  padding-top: 100px;
 }
 
 .feynman__title{
   width: 648px;
   text-align: center;
-  margin: 100px auto 70px;
-  line-height: 96px;
-  font-size: 102px;
-  font-weight: 600;
+  margin: 0 auto 70px;
+  line-height: 1.15;
+  font-size: 120px;
+  font-weight: 700;
   z-index: 1;
 }
 
 .feynman__subtitle{
   line-height: 51px;
   text-align: center;
-  margin: 0;
+  margin: 0 auto;
   font-size: 36px;
-  font-weight: 100;
+  font-weight: 400;
   z-index: 1;
 }
 
 .feynman__link{
-  bottom: 50%;
+  top: 50%;
   right: 48px;
   position: absolute;
   font-size: 36px;
-  font-weight: 100;
+  font-weight: 400;
   z-index: 1;
   line-height: 51px;
   margin: 0;
@@ -263,65 +236,30 @@ margin: 0;
   margin: 0 auto 0;
   background-color:  #1f1f1f;
   overflow: hidden;
-  }
+  z-index: 1;
+}
 
 .section-title_theme_dark{
   color: white;
   margin: 90px auto 20px;
-  display: flex;
-  justify-content: center;
-  font-size: 60px;
-  width: 60%;
-  line-height: 1.15;
-  font-weight: 600;
-}
+  }
 
 .section-subtitle_theme_dark{
   color: white;
-  display: flex;
-  justify-content: center;
-  font-size: 24px;
-  width: 60%;
-  margin: 0;
-  line-height: 34px;
-  font-weight: 100;
 }
 
 .table_theme_dark{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  list-style-type: none;
-  list-style-position: inside;
-  padding: 0;
-  z-index: 1;
+  margin: 0 auto 90px;
 }
+
 .table__heading_theme_dark{
-  display: flex;
-  line-height: 1.15;
-  font-size: 24px;
-  font-weight: 600;
   margin: 0 0 20px;
 }
 
 .table__cell_theme_dark {
   width: 200px;
   color: white;
-  margin-right: 0;
   margin-top: 80px;
-}
-
-.table__cell_theme_dark_margin_bottom{
-  margin-bottom: 90px;
-}
-
-.table__text_theme_dark{
-  display: flex;
-  line-height: 1.2;
-  font-size: 18px;
-  font-weight: 100;
-  margin: 0;
 }
 
 .kaufman__triangle{
@@ -332,20 +270,25 @@ margin: 0;
   position: absolute;
   top: 0px;
   right: -210px;
+  z-index: -1;
 }
 
 .footer{
   display: flex;
+  flex-direction: row;
+  justify-content: center;
   background-color:  #1f1f1f;
   color: white;
-  }
+  min-height: 350px;
+  padding: 60px auto 40px;
+}
 
 .footer__columns{
   width: 90%;
-  min-height: 350px;
   display: flex;
   flex-direction: row;
-  margin: 60px auto 40px;
+  margin: 60px 0 40px;
+  justify-content: space-between;
 }
 
 .footer__column_content_copyright{
@@ -356,27 +299,19 @@ margin: 0;
   align-items: baseline;
 }
 
-.logo__place_footer{
+.logo_place_footer{
   background-image: url(../images/logo_place_footer.svg);
   width: 183px;
   height: 35px;
 }
 
 .footer__author{
-  padding: 18px 0;
+margin: 0;
+line-height: 25px;
+font-size: 18px;
+font-weight: 400;
+padding: 18px 0 18px;
 }
-
-.footer__columns_right{
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-}
-
-.footer__column_content_info{
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  }
 
 .footer__column-heading{
   color: white;
@@ -384,22 +319,17 @@ margin: 0;
   padding: 0;
   line-height: 30px;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
-.footer__column-link{
+.footer__column-links{
   color: white;
   list-style-type: none;
   list-style-position: inside;
   padding: 0;
   line-height: 30px;
   font-size: 18px;
-  font-weight: 100;
-}
-
-.footer__column_content_social{
-  display: flex;
-  flex-direction: column;
+  font-weight: 400;
 }
 
 .footer__social-icon{
